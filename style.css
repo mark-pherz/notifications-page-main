@@ -1,0 +1,151 @@
+:root {
+  --red: hsl(1, 90%, 64%);
+  --blue: hsl(219, 85%, 26%);
+  --white: hsl(0, 0%, 100%);
+  --very-light-grayish-blue: hsl(210, 60%, 98%);
+  --light-grayish-blue-1: hsl(211, 68%, 94%);
+  --light-grayish-blue-2: hsl(205, 33%, 90%);
+  --grayish-blue: hsl(219, 14%, 63%);
+  --dark-grayish-blue: hsl(219, 12%, 42%);
+  --very-dark-blue: hsl(224, 21%, 14%);
+}
+
+@font-face {
+  font-family: "Jakarta";
+  src: url("./assets/fonts/PlusJakartaSans-VariableFont_wght.woff2")
+    format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--very-light-grayish-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification-panel {
+  max-width: 600px;
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%;
+  min-height: 100px;
+  padding: 16px;
+  margin: 80px 16px;
+}
+
+.notification-header {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notification-header h2 {
+  margin: 0;
+  font-size: 1.125em;
+  color: var(--very-dark-blue);
+}
+
+.notification-count {
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-size: 0.875em;
+  display: none;
+}
+
+.notification-header button {
+  border: none;
+  background-color: transparent;
+  color: var(--dark-grayish-blue);
+  font-size: 0.875em;
+}
+
+.notification-item {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 40px auto;
+  gap: 16px;
+  border-radius: 8px;
+}
+
+.notification-item.unread {
+  background-color: var(--very-light-grayish-blue);
+  cursor: pointer;
+}
+
+.notification-item:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.notification-item.picture-comment {
+  display: flex;
+  align-self: flex-start;
+}
+
+.notification-item.picture-comment .notification-item-body {
+  flex: 1;
+}
+
+.notification-item.picture-comment .commented-picture {
+  height: 40px;
+}
+
+.notification-item-avatar {
+  grid-column: 1 / 2;
+}
+
+.notification-item-avatar img {
+  width: 40px;
+}
+
+.notification-item-body {
+  grid-column: 2 / 3;
+}
+
+.notification-text,
+.notification-time {
+  color: var(--dark-grayish-blue);
+  font-size: 0.75em;
+}
+
+.user-name {
+  font-weight: 900;
+  color: var(--very-dark-blue);
+}
+
+.post-name {
+  font-weight: 900;
+}
+
+.group-name {
+  font-weight: 900;
+  color: var(--blue);
+}
+
+.privat-message {
+  color: var(--dark-grayish-blue);
+  font-size: 0.75em;
+  border: 1px solid var(--light-grayish-blue-2);
+  border-radius: 4px;
+  padding: 12px;
+  margin-top: 12px;
+}
+
+.group-name:hover {
+  color: var(--dark-grayish-blue);
+}
+
+@media (max-width: 640px) {
+  .notification-panel {
+    margin: 16px;
+  }
+}
